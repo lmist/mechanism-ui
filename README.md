@@ -4,6 +4,8 @@
 
 **Headless React, done right.**
 
+**→ Live demo: https://demo-p8woywka2-summerjam.vercel.app**
+
 The hook is the engine. The component is just the terminal.
 
 This repo contains the strict `headless-component` rule + five production-grade Next.js 15 + TypeScript examples generated with Claude Opus 4.7.
