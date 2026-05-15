@@ -1,0 +1,14 @@
+{
+  "name": "headless-component",
+  "version": "1.0.0",
+  "description": "Install the headless-component skill for Claude / Grok",
+  "bin": {
+    "headless-component": "./bin/install.js"
+  },
+  "files": [
+    "bin",
+    "SKILL.md"
+  ],
+  "keywords": ["claude", "skill", "headless", "react", "hook"],
+  "license": "MIT"
+}

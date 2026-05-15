@@ -62,7 +62,13 @@ export default function MechanismUIDemo() {
             <div className="font-mono text-[#d4af37] text-sm tracking-widest">{activeDemo}</div>
             <div className="text-xs text-[#666]">{demos.find(d => d.id === activeDemo)?.desc}</div>
           </div>
-          <div className="text-xs px-3 py-1 rounded border border-[#222] text-[#666]">FLAT INDUSTRIAL</div>
+
+          <div className="flex items-center gap-4">
+            <div className="font-mono text-xs bg-[#111] px-4 py-1.5 rounded border border-[#222] text-[#d4af37]">
+              npx headless-component
+            </div>
+            <div className="text-xs px-3 py-1 rounded border border-[#222] text-[#666]">FLAT INDUSTRIAL</div>
+          </div>
         </div>
 
         <div className="flex-1 overflow-auto p-10">
