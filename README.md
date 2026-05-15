@@ -4,7 +4,7 @@
 
 **Headless React, done right.**
 
-**→ Live demo: https://demo-p8woywka2-summerjam.vercel.app**
+**→ Live demo: https://demo-summerjam.vercel.app**
 
 The hook is the engine. The component is just the terminal.
 
