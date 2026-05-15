@@ -1,5 +1,7 @@
 # mechanism-ui
 
+![Banner](assets/banner.jpg)
+
 **Headless React, done right.**
 
 The hook is the engine. The component is just the terminal.
