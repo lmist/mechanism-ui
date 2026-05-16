@@ -129,11 +129,16 @@ function CodeBlock({ code, title }: { code: string; title: string }) {
           {label}
         </button>
       </div>
-      <div className="rounded-lg overflow-hidden border border-[#222] text-sm">
+      <div className="rounded-lg border border-[#222] text-sm overflow-auto max-h-[70vh]">
         <SyntaxHighlighter
           language="tsx"
           style={oneDark}
-          customStyle={{ margin: 0, background: '#0a0a0a', fontSize: '12.5px' }}
+          customStyle={{
+            margin: 0,
+            background: '#0a0a0a',
+            fontSize: '12.5px',
+            minWidth: 'max-content',
+          }}
           showLineNumbers
         >
           {code}
@@ -165,7 +170,7 @@ function DemoFrame({
 
       <div className="border border-[#222] bg-[#0a0a0a] p-10 rounded-2xl">{preview}</div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="flex flex-col gap-6">
         <CodeBlock code={mechanism} title="MECHANISM — Hook source" />
         <CodeBlock code={policy} title="POLICY — Example consumer" />
       </div>
