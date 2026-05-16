@@ -1,6 +1,0 @@
-Created the headless `useDataTable` hook at `components/data-table/use-data-table.ts:1` with an `index.ts` barrel — matching the repo's accordion convention.
-
-- **Mechanism (hook)**: all state (sort/page/selection — controlled + uncontrolled), derived sorted/paged rows, indeterminate ref handler, keyboard handling, aria-sort/aria-selected/aria-rowcount/aria-colcount, prop factories.
-- **Policy (render, not in hook)**: zero markup, zero classNames, zero JSX. Consumers wire the returned `getTableProps/getHeaderCellProps/getRowProps/getCellProps/getSelectAllCheckboxProps/getRowSelectCheckboxProps/getPaginationProps/getPrev|NextPageButtonProps/getPageButtonProps/getPageSizeSelectProps` to whatever Tailwind markup they want.
-- **Types**: `Column<R>`, `Row<R>`, `Cell<R>`, `SortState`, `RowId`, `SelectionMode`, `UseDataTableOptions<R>`, `UseDataTableReturn<R>` exported.
-- Controlled/uncontrolled supported for sort, pageIndex, pageSize, selection. `useCallback`/`useMemo` throughout, stable bundle from final `useMemo`. Optional `DataTableProvider` + `useDataTableContext` for compound consumers.

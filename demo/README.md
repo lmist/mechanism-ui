@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# mechanism-ui demo
 
-## Getting Started
+A Next.js 16 + React 19 app that demonstrates the [`headless-component`](../SKILL.md) rule. Sidebar nav, the live previews, and the copy buttons are all built on the same hooks the demos teach.
 
-First, run the development server:
+## Run it
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/page.tsx` — Server Component. Reads each hook's source from `hooks/*.ts` at request time and passes it to the client orchestrator. This is why the snippets shown in the UI never drift from the actual code.
+- `app/demo-app.tsx` — Client orchestrator. Uses `useTabs` for sidebar navigation (vertical orientation, arrow-key nav).
+- `hooks/` — Reference implementations:
+  - `useDisclosure` — controlled/uncontrolled open state, memoized prop bundles.
+  - `useTabs` — controlled/uncontrolled, vertical or horizontal keyboard nav.
+  - `useCombobox` — generic over option type, ARIA combobox, `aria-activedescendant`, full keyboard nav.
+  - `useAccordion` — single or multiple expand mode, controlled set of open indices.
+  - `useDataTable` — sort (asc/desc/none), pagination, row selection, generic over row type.
+  - `useCopyToClipboard` — used by the demo's code snippet copy buttons.
 
-## Learn More
+## The point
 
-To learn more about Next.js, take a look at the following resources:
+Every UI component in this app is a *thin policy layer*: it spreads hook output onto markup and chooses element types and classes. None of them owns state, defines inline handlers, or computes ARIA values in render. Audit any file under `app/` to verify.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Live: https://demo-summerjam.vercel.app

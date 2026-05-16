@@ -80,4 +80,4 @@ TASK: Create useAccordion compound component (hook + context + Accordion/Accordi
 TASK: Create useDataTable headless hook for Next.js returning prop factories for sorting, pagination, row selection. Include TypeScript types for Column, Row. No render logic in hook.
 ```
 
-All generations used model `claude-3-opus-20240229` via the `claude -p` CLI with the combined strict prompt + task.
+All generations used Claude Opus 4.7 (`claude-opus-4-7`) via the `claude -p` CLI with the combined strict prompt + task.
